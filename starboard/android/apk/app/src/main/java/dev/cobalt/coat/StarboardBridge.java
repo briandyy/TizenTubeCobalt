@@ -601,7 +601,7 @@ public class StarboardBridge {
   protected String getUserAgentAuxField() {
     StringBuilder sb = new StringBuilder();
     // Spoof the package name
-    sb.append("com.google.android.youtube.tv/5.30.301");
+    sb.append("com.google.android.youtube.tv/5.31.001");
     return sb.toString();
   }
 
