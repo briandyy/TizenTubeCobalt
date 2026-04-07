@@ -1,5 +1,8 @@
 name: android_release
 
+env:
+  DEFAULT_BUILD_ID: "1.0.9"
+
 # on:
 #   push:
 #     tags:
@@ -15,7 +18,7 @@ jobs:
         run: |
           BUILD_ID="${GITHUB_REF_NAME#v}"
           if [ -z "$BUILD_ID" ] || [ "$BUILD_ID" = "$GITHUB_REF_NAME" ]; then
-            BUILD_ID="1.0.9"
+            BUILD_ID="${DEFAULT_BUILD_ID}"
           fi
           echo "$BUILD_ID" > starboard/android/apk/build.id
       - name: Cache Gradle
@@ -89,7 +92,7 @@ jobs:
         run: |
           BUILD_ID="${GITHUB_REF_NAME#v}"
           if [ -z "$BUILD_ID" ] || [ "$BUILD_ID" = "$GITHUB_REF_NAME" ]; then
-            BUILD_ID="1.0.9"
+            BUILD_ID="${DEFAULT_BUILD_ID}"
           fi
           echo "$BUILD_ID" > starboard/android/apk/build.id
       - name: Cache Gradle
